@@ -1,4 +1,4 @@
 # cyclegan_for_cell_detection
 
-REFERENCES:
+REFERENCE:
 https://github.com/eriklindernoren/Keras-GAN/tree/master/cyclegan
