@@ -111,7 +111,7 @@ class DataLoader():
  
  class CycleGAN():
     
-    def customLoss_a(self,gen_a):
+    def maskLoss_a(self,gen_a):
         
         def lossFunction(y_true,y_pred):  
             one_a = tf.ones_like(y_true)
@@ -131,7 +131,7 @@ class DataLoader():
         
         return lossFunction
     
-    def customLoss_b(self,gen_b):
+    def maskLoss_b(self,gen_b):
         
         def lossFunction(y_true,y_pred):  
             one = tf.ones_like(gen_b)
@@ -221,7 +221,7 @@ class DataLoader():
                                         img_A_id, img_B_id
                                       ])
         self.combined.compile(loss=['mse', 'mse',
-                                    self.customLoss_a(gen_A), self.customLoss_b(gen_B),
+                                    self.maskLoss_a(gen_A), self.maskLoss_b(gen_B),
                                     'mae', 'mae'
                                    ],
                             loss_weights=[  1, 1,
